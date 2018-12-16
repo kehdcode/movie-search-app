@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import './App.css';
+import MovieRow from './movieRow.js';
 
 class App extends Component {
   constructor(props){
@@ -12,17 +12,13 @@ class App extends Component {
                {id:2, title: "SuperMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"},
                {id: 3, title: "BatMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"}
     ]
-    this.state = {
-      rows: [<p key="1">This is a row </p>,
-        <p  key="2">This is a row </p> ,
-        <p  key="3">This is a row </p> 
-
-      ]
-    }
-    let movieRows = []
+    
+    var movieRows = []
     movies.forEach((movie) => {
       console.log(movie.title)
-      movieRows.push(<p key={movie.id}>{movie.title}</p>)
+      const movieRow = <MovieRow movie={movie} />
+      
+       movieRows.push(movieRow)
     })
     this.state = {rows: movieRows}
   }
