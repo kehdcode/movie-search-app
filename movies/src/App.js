@@ -23,11 +23,12 @@ class App extends Component {
     //    movieRows.push(movieRow)
     // })
     // this.state = {rows: movieRows}
-    this.performSearch()
+    this.performSearch("avengers")
+    
   }
-  performSearch() {
+  performSearch(searchTerm) {
     console.log("performs Search")
-    const urlstring = "https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=woman"
+    const urlstring = "https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm
     $.ajax({
       url: urlstring,
       success: (searchResult) => {
@@ -50,12 +51,19 @@ class App extends Component {
     })
   }
 
+  searchChangeHandler=(event)=>{
+console.log(event.target.value)
+const searchTerm = event.target.value
+this.performSearch(searchTerm)
+  }
+
+  
 
   render() {
     return (
       <div className="App">
-      <h1>Ract Movie App </h1>
-      <input placeholder="Enter Your search here" />
+      <h1>React Movie Search App </h1>
+      <input onChange={this.searchChangeHandler}  placeholder="Enter Your search here" />
       {this.state.rows}
        
       </div>
