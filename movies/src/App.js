@@ -5,22 +5,27 @@ import MovieRow from './movieRow.js';
 class App extends Component {
   constructor(props){
     super(props)
+    this.state = {}
 
-    const movies = [
-      {id: 0, title: "Avengers", overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src:"https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" },
-               {id: 1, title: "Infinity wars",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"},
-               {id:2, title: "SuperMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"},
-               {id: 3, title: "BatMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"}
-    ]
+    // const movies = [
+    //   {id: 0, title: "Avengers", overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src:"https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" },
+    //            {id: 1, title: "Infinity wars",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"},
+    //            {id:2, title: "SuperMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"},
+    //            {id: 3, title: "BatMan",  overview: "lorem ispum ispumdthev irumpuson tgckubhdiubbib", poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"}
+    // ]
     
-    var movieRows = []
-    movies.forEach((movie) => {
-      console.log(movie.title)
-      const movieRow = <MovieRow movie={movie} />
+    // var movieRows = []
+    // movies.forEach((movie) => {
+    //   console.log(movie.title)
+    //   const movieRow = <MovieRow movie={movie} />
       
-       movieRows.push(movieRow)
-    })
-    this.state = {rows: movieRows}
+    //    movieRows.push(movieRow)
+    // })
+    // this.state = {rows: movieRows}
+    this.performSearch()
+  }
+  performSearch() {
+    console.log("performs Search")
   }
 
   render() {
